@@ -28,6 +28,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ImplisitIntentActivity::class.java))
         }
 
+        btnPindahActivityIntentBundle.setOnClickListener {
+            val intent:Intent = Intent(this, IntentBundleActivity::class.java)
+            intent.putExtra("NAMAKU", "Ade Fajr Ariav")
+            intent.putExtra("SEKOLAHKU", "UPGRIS")
+            intent.putExtra("NPM", "16670025")
+            intent.putExtra("FOTO_URL", "https://berajasenja.files.wordpress.com/2019/01/bahasa-mbaknya.jpg?w=503&h=671")
+            intent.putExtra("FOTO", android.R.drawable.alert_light_frame)
+            intent.putExtra("JK", "MAN")
+            startActivity(intent)
+        }
+
     }
 
 }
