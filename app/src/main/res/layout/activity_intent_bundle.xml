@@ -19,7 +19,32 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20dp"
+            android:id="@+id/tvNama"
             android:text="Namaku"
             android:gravity="center"
+            android:layout_marginTop="8dp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20dp"
+            android:id="@+id/tvSekolahku"
+            android:text="Sekolah"
+            android:layout_marginTop="8dp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20dp"
+            android:id="@+id/tvNpm"
+            android:text="Npm"
+            android:layout_marginTop="8dp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="20dp"
+            android:id="@+id/tvJk"
+            android:text="Jk"
             android:layout_marginTop="8dp"/>
 </LinearLayout>

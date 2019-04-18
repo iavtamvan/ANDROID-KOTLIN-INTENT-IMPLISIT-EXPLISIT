@@ -7,19 +7,59 @@
         android:orientation="vertical"
         android:layout_margin="8dp"
         tools:context=".ImplisitIntentActivity">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:id="@+id/iv"
-            android:src="@android:drawable/stat_notify_error"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/iv"
+                    android:src="@android:drawable/stat_notify_error"/>
 
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnCapture"
-            android:text="Capture"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnCapture"
+                    android:text="Capture"
+                    android:background="@color/colorAccent"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnMessage"
+                    android:text="Message"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorAccent"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnPhone"
+                    android:text="Phone"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorAccent"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"/>
+            <EditText android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:hint="Masukan Tujuan Anda ex. Universitas PGRI Semarang"
+                      android:id="@+id/tvMaps"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnGNav"
+                    android:layout_marginTop="8dp"
+                    android:text="Google Maps Navigation"
+                    android:background="@color/colorAccent"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>

@@ -22,12 +22,20 @@ class ImplisitIntentActivity : AppCompatActivity() {
 
         //  ketik disini eaaa
         btnCapture.setOnClickListener {
-//            dispatchTakePictureIntent()
-            messaging()
-
+            dispatchTakePictureIntent()
 
         }
 
+        btnMessage.setOnClickListener {
+            messaging()
+        }
+        btnPhone.setOnClickListener {
+            phone()
+        }
+
+        btnGNav.setOnClickListener {
+            mapsNav()
+        }
 
     }
 
@@ -36,6 +44,21 @@ class ImplisitIntentActivity : AppCompatActivity() {
         val uri = Uri.parse("smsto:081515512144")
         val intent = Intent(Intent.ACTION_SENDTO, uri)
         intent.putExtra("IAV TAMVAN ", "Pokoknya iav itu tamvan, dan iav pengen dia selalu disampingku huhuhuhu")
+        startActivity(intent)
+    }
+
+    // play Phone
+    fun phone(){
+        val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "081515512144"))
+        startActivity(intent)
+    }
+
+    // play Google Maps Nav
+    fun mapsNav(){
+        val intent = Intent(
+            android.content.Intent.ACTION_VIEW,
+            Uri.parse("google.navigation:q=" + tvMaps.text)
+        )
         startActivity(intent)
     }
 

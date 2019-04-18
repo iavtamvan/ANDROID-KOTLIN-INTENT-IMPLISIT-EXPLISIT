@@ -14,9 +14,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         KotlinPermissions.with(this) // where this is an FragmentActivity instance
-            .permissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.SEND_SMS)
+            .permissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.CAMERA,
+                Manifest.permission.SEND_SMS,
+                Manifest.permission.CALL_PHONE)
             .onAccepted { permissions ->
-                Toast.makeText(this, "Accesed", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Accesed" + BuildConfig.APPLICATION_ID, Toast.LENGTH_LONG).show()
             }
             .onDenied { permissions ->
                 Toast.makeText(this, "Denied", Toast.LENGTH_LONG).show()
@@ -43,9 +48,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("NPM", "16670025")
             intent.putExtra(
                 "FOTO_URL",
-                "https://berajasenja.files.wordpress.com/2019/01/bahasa-mbaknya.jpg?w=503&h=671"
+                "http://res.cloudinary.com/okaprinarjaya/image/upload/c_fill,h_180,w_180/v1/phpindonesia/production/1962-20160203173928.jpg"
             )
-            intent.putExtra("FOTO", android.R.drawable.alert_light_frame)
             intent.putExtra("JK", "MAN")
             startActivity(intent)
         }
