@@ -20,30 +20,27 @@ class ImplisitIntentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_implisit_intent)
 
-        setupPermissions()
         //  ketik disini eaaa
         btnCapture.setOnClickListener {
-            dispatchTakePictureIntent()
+//            dispatchTakePictureIntent()
+            messaging()
+
 
         }
 
 
     }
 
-    private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(this,
-            Manifest.permission.CAMERA)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Permission to camera denied", Toast.LENGTH_LONG).show()
-        } else{
-            Toast.makeText(this, "Permission to camera Acces", Toast.LENGTH_LONG).show()
-        }
+    // Play Message
+    fun messaging(){
+        val uri = Uri.parse("smsto:081515512144")
+        val intent = Intent(Intent.ACTION_SENDTO, uri)
+        intent.putExtra("IAV TAMVAN ", "Pokoknya iav itu tamvan, dan iav pengen dia selalu disampingku huhuhuhu")
+        startActivity(intent)
     }
 
 
-
-
-
+    // play Camera
     fun dispatchTakePictureIntent() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(packageManager)?.also {
